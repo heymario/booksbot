@@ -15,7 +15,7 @@ class ArticleItem(scrapy.item.Item):
 class bidSpider(scrapy.Spider):
     name = "bid"
     def start_requests(self):
-        for i in range(1,2000):
+        for i in range(1,10):
             page_url = 'http://www.bidding.csg.cn/zbcg/index_%d.jhtml' %(i)
             yield scrapy.Request(url=page_url, callback=self.parse_article)
 
